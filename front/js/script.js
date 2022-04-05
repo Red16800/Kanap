@@ -5,9 +5,9 @@
 }
 
 //Récupération des data
-test();
+getProduct();
 
-async function test() {
+async function getProduct() {
     let result = await getArticles ()
     .then(function (resultatAPI){
     const articles = resultatAPI;
