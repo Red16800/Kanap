@@ -7,6 +7,13 @@
 //Récupération des data
 getProduct();
 
+//fenêtre pop-up
+const popupConfirmation = () => {
+    if (window.confirm(`Connexion à l'Api impossible `)) {
+        window.location.href = "index.html";
+    }
+}
+
 async function getProduct() {
     let result = await getArticles ()
     .then(function (resultatAPI){
@@ -46,7 +53,10 @@ async function getProduct() {
     
     })
     .catch (function(error){
+        console.log('test'); 
+        popupConfirmation();      
         return error;
+        
     });
 }
 

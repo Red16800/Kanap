@@ -277,16 +277,16 @@ function getForm() {
         //creation de la regExp pour la validation email
         let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
         let testEmail = emailRegExp.test(inputEmail.value);
-    console.log(testEmail);
-    let emailErrorMsg = inputEmail.nextElementSibling;
+        console.log(testEmail);
+        let emailErrorMsg = inputEmail.nextElementSibling;
 
-    if(testEmail){
-        emailErrorMsg.innerHTML = 'Adresse Email valide';
-    }
-    else{
-        emailErrorMsg.innerHTML = 'Adresse Email non valide';
-    }
-    };
+        if(testEmail){
+            emailErrorMsg.innerHTML = 'Adresse Email valide';
+        }
+        else{
+            emailErrorMsg.innerHTML = 'Adresse Email non valide';
+        }
+        };
 
 }
 
@@ -347,8 +347,9 @@ function postForm(){
             console.log(data);
             localStorage.clear();
             localStorage.setItem("orderId", data.orderId);
+            
+            document.location.href = "confirmation.html";
             popupConfirmation();
-            //document.location.href = "confirmation.html";
         })
 
         .catch((err) => {
